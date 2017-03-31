@@ -31,64 +31,64 @@ function buildNpmDependencies(): any {
 }
 
 const command: Command = {
-	description: 'test your application',
+	description: 'Build and test your application.',
 	register(options: OptionsHelper) {
 		options('a', {
 			alias: 'all',
-			describe: 'Indicates that all tests (both unit and functional) should be run. By default, only unit tests are run.',
+			describe: 'Run both unit and functional tests.',
 			default: false
 		});
 
 		options('b', {
 			alias: 'browser',
-			describe: 'Indicates that unit tests should be run in the browser (default node). Note that functional tests are always run in the browser.',
+			describe: 'Run unit tests in the browser.',
 			type: 'boolean'
 		});
 
 		options('c', {
 			alias: 'config',
-			describe: 'Specifies what configuration to test with: \'local\'(default), \'browserstack\', \'testingbot\', or \'saucelabs\'.',
+			describe: 'The configuration to test with: \'local\'(default), \'browserstack\', \'testingbot\', or \'saucelabs\'.',
 			type: 'string'
 		});
 
 		options('cov', {
 			alias: 'coverage',
-			describe: 'If specified coverage will be included. This is the same as adding the LcovHtml reporter'
+			describe: 'Generate coverage information.'
 		});
 
 		options('f', {
 			alias: 'functional',
-			describe: 'Indicates that only functional tests should be run. By default only unit tests are run',
+			describe: 'Run only functional tests.',
 			default: false
 		});
 
 		options('k', {
 			alias: 'testingKey',
-			describe: 'API key for testingbot or accesskey for saucelabs or browserstack',
+			describe: 'The API key for testingbot or accesskey for saucelabs or browserstack.',
 			type: 'string'
 		});
 
 		options('n', {
 			alias: 'userName',
-			describe: 'User name for testing platform',
+			describe: 'The user name for testing platform.',
 			type: 'string'
 		});
 
 		options('r', {
 			alias: 'reporters',
-			describe: 'Comma separated list of reporters to use, defaults to Console',
+			describe: 'A comma separated list of reporters to use (defaults to Console).',
 			type: 'string'
 		});
 
 		options('s', {
 			alias: 'secret',
-			describe: 'API secret for testingbot',
+			describe: 'The API secret for testingbot',
 			type: 'string'
 		});
 
 		options('u', {
 			alias: 'unit',
-			describe: 'Indicates that only unit tests should be run. This is the default.',
+			describe: 'Run only unit tests.',
 			default: true
 		});
 	},
